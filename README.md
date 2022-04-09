@@ -106,18 +106,18 @@ $ RecInfoJSON hello foo bar 2>&1 | jq .
 ```
 
 ```console
-$ # RecExec
-$ RecExec date +%F
+$ # RecExecJSON
+$ RecExecJSON date +%F
 {"timestamp":"2021-11-27T20:25:03+09:00","severity":"INFO","caller":"-bash","message":"$ date +%F"}  # <- NOTE: stderr
 2021-11-25
 ```
 
 ```console
-$ # RecRun
-$ RecRun sh -c "echo out; echo err 1>&2; exit 1"
+$ # RecRunJSON
+$ RecRunJSON sh -c "echo out; echo err 1>&2; exit 1"
 {"timestamp":"2021-11-27T20:25:27+09:00","severity":"INFO","caller":"-bash","message":"$ date +%F","command":"date +%F","stdout":"2021-11-27","stderr":"","return":"1"}  # <- NOTE: stderr
 
-$ RecRun sh -c "echo out; echo err 1>&2; exit 1" 2>&1 | jq .
+$ RecRunJSON sh -c "echo out; echo err 1>&2; exit 1" 2>&1 | jq .
 {
   "timestamp": "2021-11-27T20:26:46+09:00",
   "severity": "INFO",
