@@ -1,4 +1,4 @@
-# rec.sh - JSON logger
+# rec.sh - JSON logger for POSIX Shell Script
 
 rec.sh is a lightweight and no dependencies JSON logger for POSIX Shell Script.  
 
