@@ -15,14 +15,14 @@ There are two ways.
 ### 1. Vendoring (Recommended)
 
 Copy the rec.sh functions in the shell script file ([`index.html`](/index.html)) and paste them where you want to use them.  
-(file name `index.html` may seem strange, but it's necessary for me to serve Shell Script file in GitHub Pages with as short URL *https://rec-logger.github.io/rec.sh/* as possible)  
+(file name `index.html` may seem strange, but it's necessary for me to serve Shell Script file in GitHub Pages with as short URL *https://kunitsuinc.github.io/rec.sh/* as possible)  
 
 ### 2. Use via HTTP
 
 You can load a shell script function via the Internet as follows:  
 
 ```console
-$ eval "$(curl -fLSs --tlsv1.2 https://rec-logger.github.io/rec.sh/)"
+$ eval "$(curl -fLSs --tlsv1.2 https://kunitsuinc.github.io/rec.sh/)"
 
 $ RecInfoJSON hello foo bar HOSTNAME ${HOSTNAME}
 {"timestamp":"2021-11-26T08:02:08+09:00","severity":"INFO","caller":"-bash","message":"hello","foo":"bar","HOSTNAME":"localhost"}  # <- NOTE: stderr

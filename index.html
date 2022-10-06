@@ -1,9 +1,9 @@
 #!/bin/sh
-cat >/dev/null <<'#https://rec-logger.github.io/rec.sh/'
+cat >/dev/null <<'#https://kunitsuinc.github.io/rec.sh/'
 <style>body{font-size:0;margin:0}code,pre{font-size:1rem;font-family:'Ricty Diminished',Osaka-Mono,Menlo,Monaco,Consolas,'Courier New','Andale Mono','Ubuntu Mono',monospace}</style><pre><code>
-#https://rec-logger.github.io/rec.sh/
+#https://kunitsuinc.github.io/rec.sh/
 
-# MIT License Copyright (c) 2021 ginokent https://github.com/rec-logger/rec.sh
+# Apache License 2.0 Copyright (c) 2022 kunitsuinc https://github.com/kunitsuinc/rec.sh
 # Common
 _recRFC3339() { date "+%Y-%m-%dT%H:%M:%S%z" | sed "s/\(..\)$/:\1/"; }
 _recCmd() { for a in "$@"; do if echo "${a:-}" | grep -Eq "[[:blank:]]"; then printf "'%s' " "${a:-}"; else printf "%s " "${a:-}"; fi; done | sed "s/ $//"; }
@@ -23,7 +23,7 @@ RecRun() { _dlm="####R#E#C#D#E#L#I#M#I#T#E#R####" _all=$({ _out=$("$@") && _rtn=
 # shellcheck disable=SC3045
 echo "${SHELL-}" | grep -q bash$ && export -f _recRFC3339 _recCmd RecDefault RecDebug RecInfo RecWarning RecError RecCritical RecAlert RecEmergency RecExec RecRun
 
-# MIT License Copyright (c) 2021 ginokent https://github.com/rec-logger/rec.sh
+# Apache License 2.0 Copyright (c) 2022 kunitsuinc https://github.com/kunitsuinc/rec.sh
 # Common
 _recRFC3339() { date "+%Y-%m-%dT%H:%M:%S%z" | sed "s/\(..\)$/:\1/"; }
 _recCmd() { for a in "$@"; do if echo "${a:-}" | grep -Eq "[[:blank:]]"; then printf "'%s' " "${a:-}"; else printf "%s " "${a:-}"; fi; done | sed "s/ $//"; }
@@ -45,4 +45,4 @@ RecRunJSON() { _dlm='####R#E#C#D#E#L#I#M#I#T#E#R####' _all=$({ _out=$("$@") && _
 # shellcheck disable=SC3045
 echo "${SHELL-}" | grep -q bash$ && export -f _recRFC3339 _recCmd _recEscape _recJSON RecDefaultJSON RecDebugJSON RecInfoJSON RecNoticeJSON RecWarningJSON RecErrorJSON RecCriticalJSON RecAlertJSON RecEmergencyJSON RecExecJSON RecRunJSON
 
-# (C) 2021 ginokent </code></pre>
+# (C) 2022 kunitsuinc </code></pre>
