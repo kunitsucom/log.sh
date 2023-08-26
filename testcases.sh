@@ -12,8 +12,8 @@ err=0
 
 # begin log
 LogshRun uname -a
-# end log
 LogshInfo "RUN: $0"
+# end log
 trap 'if [ ${err:-0} -gt 0 ]; then
   LogshError "FAIL: $0"
   exit ${err:-1}
