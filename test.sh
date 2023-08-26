@@ -10,7 +10,9 @@ export TZ=UTC LOGSH_COLOR=true LOGSH_LEVEL=0 LOGSH_TIMESTAMP_KEY=timestamp LOGSH
 
 err=0
 
+# begin log
 LogshInfo "RUN: $0"
+# end log
 trap 'if [ ${err:-0} -gt 0 ]; then
   LogshError "FAIL: $0"
   exit ${err:-1}
@@ -22,7 +24,9 @@ fi
 
 # local
 ./testcases.sh || err=$((err+$?))
+# debian:12
+docker run --rm -v "$(pwd -P)":"$(pwd -P)" -w "$(pwd -P)" -e LOGSH_COLOR=true debian:12 ./testcases.sh || err=$((err+$?))
 # ubuntu:22.04 dash
-docker run --rm -v "$(pwd -P)":"$(pwd -P)" -w "$(pwd -P)" ubuntu:22.04 dash ./testcases.sh || err=$((err+$?))
+docker run --rm -v "$(pwd -P)":"$(pwd -P)" -w "$(pwd -P)" -e LOGSH_COLOR=true ubuntu:22.04 dash ./testcases.sh || err=$((err+$?))
 # ubuntu:22.04 bash
-docker run --rm -v "$(pwd -P)":"$(pwd -P)" -w "$(pwd -P)" ubuntu:22.04 bash ./testcases.sh || err=$((err+$?))
+docker run --rm -v "$(pwd -P)":"$(pwd -P)" -w "$(pwd -P)" -e LOGSH_COLOR=true ubuntu:22.04 bash ./testcases.sh || err=$((err+$?))
