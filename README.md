@@ -1,3 +1,5 @@
+# 🚧 Moved [https://github.com/hakadoriya/log.sh](https://github.com/hakadoriya/log.sh) 🚧
+
 # log.sh - JSON logger for POSIX Shell Script
 
 [![license](https://img.shields.io/github/license/kunitsucom/log.sh)](LICENSE)
